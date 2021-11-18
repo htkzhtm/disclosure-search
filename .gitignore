@@ -127,3 +127,12 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Disclosure format
+*.zip
+*.pdf
+XBRL/
+
+# other
+.DS_Store
+

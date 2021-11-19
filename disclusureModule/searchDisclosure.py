@@ -27,10 +27,10 @@ class disSearcher:
     # require: none
     # return: [] {secCode, filerName, dodId, docDescription}
 
-    # secCode: The disclosure number managed by EDINET.
-    # dodId: The securities code.
+    # secCode: The stock code.
     # filerName: A submitter. This name is often a company name.
-    # docDescription: Description of disclosure.
+    # dodId: The disclosure number managed by EDINET.
+    # docDescription: Title of disclosure.
     def searchDis (self):
         # while example. This spec wad abolished.
         # while currentTime.date() > datetime.date(2021, 10, 30):

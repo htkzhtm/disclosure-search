@@ -1,5 +1,9 @@
 # Summary of this repo
-Search the timely disclosure of particular listed company, using by EDINET API.
+Search the lastest timely disclosure of particular listed company, using by EDINET API.
+
+This source works by specifying the stock code.
+
+For now, it covers quarterly reports and securities reports.
 
 This content is mainly for **investors who can programming to some extent**.
 

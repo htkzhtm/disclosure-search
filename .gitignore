@@ -133,6 +133,7 @@ dmypy.json
 *.png
 *.pdf
 XBRL/
+disclosureFiles/
 
 # other
 .DS_Store

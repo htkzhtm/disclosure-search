@@ -4,6 +4,7 @@
 import sys
 import requests
 import urllib3
+# import pprint
 import datetime
 from urllib3.exceptions import InsecureRequestWarning
 urllib3.disable_warnings(InsecureRequestWarning)
@@ -60,11 +61,15 @@ class disSearcher:
                     jsonData["results"][num]["secCode"] != None
                 ):
                     self.disclosureList.append({
+                        "submitDateTime": jsonData["results"][num]["submitDateTime"][:10],
+                        "periodEnd": jsonData["results"][num]["periodEnd"],
+                        "edinetCode": jsonData["results"][num]["edinetCode"],
                         "secCode": jsonData["results"][num]["secCode"],
                         "filerName": jsonData["results"][num]["filerName"],
                         "docID": jsonData["results"][num]["docID"],
                         "docDescription": jsonData["results"][num]["docDescription"]
                     })
+                    # pprint.pprint (jsonData["results"][num])
                     break
             if (len(self.disclosureList)): break
         return self.disclosureList

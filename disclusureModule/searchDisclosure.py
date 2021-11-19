@@ -60,7 +60,7 @@ class disSearcher:
                     self.disclosureList.append({
                         "secCode": jsonData["results"][num]["secCode"],
                         "filerName": jsonData["results"][num]["filerName"],
-                        "dodId": jsonData["results"][num]["docID"],
+                        "docID": jsonData["results"][num]["docID"],
                         "docDescription": jsonData["results"][num]["docDescription"]
                     })
         return self.disclosureList

@@ -5,7 +5,7 @@ import requests
 class disAcquirer:
     baseURL = "https://disclosure.edinet-fsa.go.jp/api/v1/documents/"
 
-    # require: dodId (EDINET managed number)
+    # require: docId (EDINET managed number)
     # return : None
     def aqquireDisclosurePDF (self, docId):
         url = self.baseURL + docId

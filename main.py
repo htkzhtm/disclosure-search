@@ -1,6 +1,6 @@
 import pprint
-from disclusureModule import searchDisclosure as sdc
-from disclusureModule import acquireDisclosure as daq
+from disclosureModule import searchDisclosure as sdc
+from disclosureModule import acquireDisclosure as daq
 
 searcher = sdc.disSearcher()
 acquirer = daq.disAcquirer()

@@ -25,11 +25,11 @@ class disSearcher:
 
 
     # require: none
-    # return: [] {secCode, filerName, dodId, docDescription}
+    # return: [] {secCode, filerName, docId, docDescription}
 
     # secCode: The stock code.
     # filerName: A submitter. This name is often a company name.
-    # dodId: The disclosure number managed by EDINET.
+    # docId: The disclosure number managed by EDINET.
     # docDescription: Title of disclosure.
     def searchDis (self):
         # while example. This spec wad abolished.

@@ -14,6 +14,9 @@ if len(disclosureDetails) == 0:
 pprint.pprint (disclosureDetails)
 
 # Download the PDF and Zip
-acquirer.aqquireDisclosurePDF(disclosureDetails[0]["docID"])
-acquirer.aqquireDisclosureZip(disclosureDetails[0]["docID"])
+for delta in range(0, len(disclosureDetails)):
+    acquirer.aqquireDisclosurePDF(disclosureDetails[delta]["docID"])
+    acquirer.aqquireDisclosureZip(disclosureDetails[delta]["docID"])
 
+    # Write Binary is too long. This commentout is for debug
+    # exit()

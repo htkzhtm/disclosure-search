@@ -130,6 +130,7 @@ dmypy.json
 
 # Disclosure format
 *.zip
+*.png
 *.pdf
 XBRL/
 

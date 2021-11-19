@@ -21,3 +21,19 @@ jsonData = requests.get(
 if (jsonData["metadata"]["message"] == "404"):
   print ("Maybe illegal date. Check your insert date. Or, disclosure submitted this date may not be existed.")
   sys.exit()
+
+# Search the securities report submitted by listed company.
+disclosureList = []
+for num in range(len(jsonData["results"])):
+  if (jsonData["results"][num]["ordinanceCode"] == "010" and
+    jsonData["results"][num]["formCode"] == "030000" and
+    jsonData["results"][num]["secCode"] != None
+  ):
+    disclosureList.append({
+      "secCode": jsonData["results"][num]["secCode"],
+      "filerName": jsonData["results"][num]["filerName"],
+      "dodId": jsonData["results"][num]["docID"],
+      "docDescription": jsonData["results"][num]["docDescription"]
+    })
+
+print (disclosureList)

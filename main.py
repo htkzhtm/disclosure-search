@@ -13,5 +13,7 @@ if len(disclosureDetails) == 0:
     exit()
 pprint.pprint (disclosureDetails)
 
-# Download the PDF
+# Download the PDF and Zip
 acquirer.aqquireDisclosurePDF(disclosureDetails[0]["docID"])
+acquirer.aqquireDisclosureZip(disclosureDetails[0]["docID"])
+

@@ -1,4 +1,4 @@
-# Summary of this rep
+# Summary of this repo
 Search the timely disclosure of particular listed company, using by EDINET API.
 
 This content is mainly for **investors who can programming to some extent**.
@@ -14,3 +14,22 @@ Python3
 
 # How to use
 coming soon.
+
+# What is a securities(stock?) code?
+A stock code is the identification number of a listed company in Japan.
+
+In USA, calls this, "Ticker Symbol" (e.g. $APPL, $AMZN).
+
+In Japan, uses 4 digits number. The representative companies are as follows.
+
+
+| Stock Code | Company Name | Company Name(in English) |
+| ------------- | ------------- | ------------- |
+| 6758  | ソニーグループ株式会社  | Sony Group Corporation  |
+| 6861  | 株式会社キーエンス  | KEYENCE CORPORATION  |
+| 7203  | トヨタ自動車株式会社  | Toyota Motor Corporation  |
+| 7974  | 任天堂株式会社  | Nintendo Co., Ltd  |
+| 9432  | 日本電信電話株式会社  | Nippon Telegraph and Telephone Corporation  |
+
+
+

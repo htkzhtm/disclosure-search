@@ -9,7 +9,7 @@ head = etree.parse(filename).getroot()
 
 company = head.find("jpcrp_cor:CompanyNameCoverPage",head.nsmap).text
 description = head.find("jpcrp_cor:BusinessPolicyBusinessEnvironmentIssuesToAddressEtcTextBlock",head.nsmap).text
-description = re.sub('\s','',description)
+description = re.sub('¥s','',description)
 description = re.sub('<.*?>','',description)
 
 #print(description)

@@ -46,6 +46,9 @@ class disAcquirer:
     # Make directory for disclosure
     # require none
     # return none
+    # This function will be moved another Class.
     def makedisclosureFilingDir (self):
         if not os.path.exists(os.path.expanduser("~") + "/disclosure-search/disclosureFiles"):
             os.mkdir(os.path.expanduser("~") + "/disclosure-search/disclosureFiles")
+            # os.mkdir(os.path.expanduser("~") + "/disclosure-search/disclosureFiles/wordCloud")
+            

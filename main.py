@@ -12,12 +12,12 @@ if len(sys.argv) < 2 or (not stockCG.isStockCode(sys.argv[1])):
     print('Stock code is illegal. Check it')
     exit()
 
-# check the disclosure existing or not. Requires pprint pack.
-disclosureDetails = searcher.searchDis()
+disclosureDetails = searcher.searchDis(stockCG.genarateStockCode(sys.argv[1]))
 
-if len(disclosureDetails) == 0:
+if not len(disclosureDetails):
     print('Disclosure does not exist')
     exit()
+# check the disclosure existing or not. Requires pprint pack.
 pprint.pprint (disclosureDetails)
 
 # Download the PDF and Zip

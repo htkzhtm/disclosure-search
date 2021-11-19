@@ -9,9 +9,9 @@ from urllib3.exceptions import InsecureRequestWarning
 urllib3.disable_warnings(InsecureRequestWarning)
 
 class disSearcher:
-    # If quarterly disclosure, 90 days may be fine.
+    # If quarterly disclosure, 120 days may be fine.
     # This specification may be changed.
-    dayOffset = 1
+    dayOffset = 120
 
     # Japanese company often submits the securities report on June.
     # currentTime = datetime.datetime.now() - datetime.timedelta(days = 150)
@@ -24,14 +24,14 @@ class disSearcher:
     # def __init__(self):
 
 
-    # require: none
+    # require: Stock code
     # return: [] {secCode, filerName, docId, docDescription}
 
     # secCode: The stock code.
     # filerName: A submitter. This name is often a company name.
     # docId: The disclosure number managed by EDINET.
     # docDescription: Title of disclosure.
-    def searchDis (self):
+    def searchDis (self, stockCode):
         # while example. This spec wad abolished.
         # while currentTime.date() > datetime.date(2021, 10, 30):
 
@@ -53,8 +53,10 @@ class disSearcher:
 
             # Search the securities report submitted by listed company.
             for num in range(len(jsonData["results"])):
-                if (jsonData["results"][num]["ordinanceCode"] == "010" and
-                    jsonData["results"][num]["formCode"] == "030000" and
+                if (jsonData["results"][num]["secCode"] == stockCode and
+                    jsonData["results"][num]["ordinanceCode"] == "010" and
+                    (jsonData["results"][num]["formCode"] == "030000" or 
+                        jsonData["results"][num]["formCode"] == "043000") and
                     jsonData["results"][num]["secCode"] != None
                 ):
                     self.disclosureList.append({
@@ -63,4 +65,6 @@ class disSearcher:
                         "docID": jsonData["results"][num]["docID"],
                         "docDescription": jsonData["results"][num]["docDescription"]
                     })
+                    break
+            if (len(self.disclosureList)): break
         return self.disclosureList

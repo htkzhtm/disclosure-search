@@ -1,9 +1,16 @@
 import pprint
+import sys
 from disclosureModule import searchDisclosure as sdc
 from disclosureModule import acquireDisclosure as daq
+from disclosureModule import stockCodeGuarantee as scg
 
 searcher = sdc.disSearcher()
 acquirer = daq.disAcquirer()
+stockCG = scg.stockCodeClass()
+
+if len(sys.argv) < 2 or (not stockCG.isStockCode(sys.argv[1])):
+    print('Stock code is illegal. Check it')
+    exit()
 
 # check the disclosure existing or not. Requires pprint pack.
 disclosureDetails = searcher.searchDis()

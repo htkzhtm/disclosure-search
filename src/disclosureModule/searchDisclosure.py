@@ -63,6 +63,7 @@ class disSearcher:
                     dci.isListedCompany(jsonData["results"][num]["secCode"])
                 ):
                     self.disclosureList.append({
+                        "formCode": jsonData["results"][num]["formCode"],
                         "submitDateTime": jsonData["results"][num]["submitDateTime"][:10],
                         "periodEnd": jsonData["results"][num]["periodEnd"],
                         "edinetCode": jsonData["results"][num]["edinetCode"],

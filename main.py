@@ -1,9 +1,9 @@
 import pprint
 import sys
-from disclosureModule import searchDisclosure as sdc
-from disclosureModule import acquireDisclosure as daq
-from disclosureModule import stockCodeGuarantee as scg
-from disclosureModule import unzipDisclosure as uzd
+from src.disclosureModule import searchDisclosure as sdc
+from src.disclosureModule import acquireDisclosure as daq
+from src.disclosureModule import stockCodeGuarantee as scg
+from src.disclosureModule import unzipDisclosure as uzd
 
 searcher = sdc.disSearcher()
 acquirer = daq.disAcquirer()

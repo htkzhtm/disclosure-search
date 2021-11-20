@@ -28,3 +28,12 @@ class disclosureInspection:
     # FormCode of Quarterly Report for xbrl is into 040 "3" 00
     def tosQuarterlyReportCodeForXbrl (self, secCode):
         return "040300" if secCode == self.QuarterlyReportCode else secCode
+
+    # Function Name.
+    def tosBusinessContentTakusonomi (self):
+        return "jpcrp_cor:DescriptionOfBusinessTextBlock"
+
+    # Management policy, business environment, issues to be dealt with, etc.
+    # This element cannnot use in case DISCLOSURE is QUAETERLY REPORT.
+    def tosBusPolEnvIssuesTakusonomi (self):
+        return "jpcrp_cor:BusinessPolicyBusinessEnvironmentIssuesToAddressEtcTextBlock"

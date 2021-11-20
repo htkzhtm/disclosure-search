@@ -7,6 +7,9 @@ authors = ["Hitomi Hatsukaze"]
 [tool.poetry.dependencies]
 python = "^3.9"
 requests = "^2.26.0"
+lxml = "^4.6.4"
+Janome = "^0.4.1"
+wordcloud = "^1.8.1"
 
 [tool.poetry.dev-dependencies]
 

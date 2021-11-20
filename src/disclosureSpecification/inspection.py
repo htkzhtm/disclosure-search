@@ -24,3 +24,7 @@ class disclosureInspection:
     # This function maybe NOT need.
     def isListedCompany (self, secCode):
         return secCode != None
+
+    # FormCode of Quarterly Report for xbrl is into 040 "3" 00
+    def tosQuarterlyReportCodeForXbrl (self, secCode):
+        return "040300" if secCode == self.QuarterlyReportCode else secCode

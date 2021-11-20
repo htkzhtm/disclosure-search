@@ -85,4 +85,5 @@ In Japan, uses 4 digits number. The representative companies are as following.
 | 9983  | 株式会社ファーストリテイリング  | FAST RETAILING CO., LTD.  |
 | 9984  | ソフトバンクグループ株式会社  | SoftBank Group Corp.  |
 
-
+# Disclaimer
+We do not take any responsibility even if you suffer from disadvantagefor using this repository.

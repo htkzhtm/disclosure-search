@@ -6,11 +6,11 @@ class configClass:
         return os.path.expanduser("~") + "/disclosure-search/disclosureFiles/XBRL/PublicDoc/"
 
     def tosWordCloudPath (self):
-        return os.path.expanduser("~") + "/disclosure-search/disclosureFiles"
+        return os.path.expanduser("~") + "/disclosure-search/disclosureFiles/"
 
     backgroundColor='white'
 
-    fontPath = '/System/Library/Fonts/ヒラギノ角ゴシック W2.ttc',
+    fontPath = '/System/Library/Fonts/ヒラギノ角ゴシック W2.ttc'
 
     stopWordsArray = [
         '株式会社', '当社', '事業','関連','内容','セグメント', '品', '事項', '上', '性', '視点', '次', '人', '時',

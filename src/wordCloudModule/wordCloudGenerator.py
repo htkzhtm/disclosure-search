@@ -16,6 +16,7 @@ class wordClouder:
 
     baseName = "jpcrp"
 
+    # Generation. This Spec will be modified.
     def generateWordCloud (self, edinetCode, periodEnd, submitDateTime, formCode):
         conf = wcc.configClass()
         fileNamePattern = self.generateXbrlFileNamePattern(edinetCode, periodEnd, submitDateTime, formCode)
@@ -31,6 +32,22 @@ class wordClouder:
         if not description:
             print("File is missing. Check your debug. Generated File Pattern is following")
             print(fileNamePattern)
+
+        # Janome analysis.
+        t = Tokenizer()
+        words = []
+        for token in t.tokenize(description):
+            if token.part_of_speech.split(',')[0] in ['形容詞', '動詞', '名詞']:
+                words.append(token.base_form)
+
+        wordcloud = WordCloud(
+            background_color = conf.backgroundColor,
+            font_path = conf.fontPath,
+            stopwords = conf.stopWordsArray,
+        )
+        wordcloud.generate(' '.join(words))
+        wordcloud.to_file(conf.tosWordCloudPath() + 'wordcloud.png')
+
 
     # Return the ARRAY datatype.
     # Quarterly report cannnot be identified even if API response is used.

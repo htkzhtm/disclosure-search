@@ -6,6 +6,7 @@ import requests
 import urllib3
 # import pprint
 import datetime
+from ..disclosureSpecification import inspection as dsi
 from urllib3.exceptions import InsecureRequestWarning
 urllib3.disable_warnings(InsecureRequestWarning)
 
@@ -35,7 +36,7 @@ class disSearcher:
     def searchDis (self, stockCode):
         # while example. This spec wad abolished.
         # while currentTime.date() > datetime.date(2021, 10, 30):
-
+        dci = dsi.disclosureInspection()
         for delta in range(0, self.dayOffset + 1):
             print("Disclosure in", (self.currentTime - datetime.timedelta(days = delta)).date()) 
 
@@ -55,10 +56,11 @@ class disSearcher:
             # Search the securities report submitted by listed company.
             for num in range(len(jsonData["results"])):
                 if (jsonData["results"][num]["secCode"] == stockCode and
-                    jsonData["results"][num]["ordinanceCode"] == "010" and
-                    (jsonData["results"][num]["formCode"] == "030000" or 
-                        jsonData["results"][num]["formCode"] == "043000") and
-                    jsonData["results"][num]["secCode"] != None
+                    dci.isDisclosureOfCorporateInformation(jsonData["results"][num]["ordinanceCode"]) and
+                    (dci.isSecuritiesReportCode(jsonData["results"][num]["formCode"]) or 
+                        dci.isQuarterlyReport(jsonData["results"][num]["formCode"])
+                    ) and
+                    dci.isListedCompany(jsonData["results"][num]["secCode"])
                 ):
                     self.disclosureList.append({
                         "submitDateTime": jsonData["results"][num]["submitDateTime"][:10],

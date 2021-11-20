@@ -82,8 +82,7 @@ In Japan, uses 4 digits number. The representative companies are as following.
 | 9432  | 日本電信電話株式会社  | Nippon Telegraph and Telephone Corporation  |
 | 9433  | KDDI株式会社  | KDDI CORPORATION  |
 | 9434  | ソフトバンク株式会社  | SoftBank Corp.  |
-| 9983  | ソフトバンクグループ株式会社  | SoftBank Group Corp.  |
-| 9984  | 株式会社ファーストリテイリング  | FAST RETAILING CO., LTD.  |
-
+| 9983  | 株式会社ファーストリテイリング  | FAST RETAILING CO., LTD.  |
+| 9984  | ソフトバンクグループ株式会社  | SoftBank Group Corp.  |
 
 

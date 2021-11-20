@@ -34,6 +34,6 @@ class disclosureInspection:
         return "jpcrp_cor:DescriptionOfBusinessTextBlock"
 
     # Management policy, business environment, issues to be dealt with, etc.
-    # This element cannnot use in case DISCLOSURE is QUAETERLY REPORT.
+    # This element CANNOT use in case DISCLOSURE is QUAETERLY REPORT.
     def tosBusPolEnvIssuesTakusonomi (self):
         return "jpcrp_cor:BusinessPolicyBusinessEnvironmentIssuesToAddressEtcTextBlock"

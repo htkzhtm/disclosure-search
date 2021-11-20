@@ -4,11 +4,13 @@ from src.disclosureModule import searchDisclosure as sdc
 from src.disclosureModule import acquireDisclosure as daq
 from src.disclosureModule import stockCodeGuarantee as scg
 from src.disclosureModule import unzipDisclosure as uzd
+from src.wordCloudModule import wordCloudGenerator as wcg
 
 searcher = sdc.disSearcher()
 acquirer = daq.disAcquirer()
 stockCG = scg.stockCodeClass()
 unzipper = uzd.zipDisclosure()
+wc = wcg.wordClouder()
 
 if len(sys.argv) < 2 or (not stockCG.isStockCode(sys.argv[1])):
     print('Stock code is illegal. Check it')
@@ -32,3 +34,10 @@ for delta in range(0, len(disclosureDetails)):
 
     # Write Binary is too long. This commentout is for debug
     # exit()
+    # wordCloud generation.
+    wc.generateWordCloud(
+        disclosureDetails[delta]["edinetCode"],
+        disclosureDetails[delta]["periodEnd"],
+        disclosureDetails[delta]["submitDateTime"],
+        disclosureDetails[delta]["formCode"]
+    )

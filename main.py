@@ -34,7 +34,7 @@ for delta in range(0, len(disclosureDetails)):
 
     # Write Binary is too long. This commentout is for debug
     # exit()
-    # wordCloud generation.
+    # wordCloud generate.
     wc.generateWordCloud(
         disclosureDetails[delta]["edinetCode"],
         disclosureDetails[delta]["periodEnd"],

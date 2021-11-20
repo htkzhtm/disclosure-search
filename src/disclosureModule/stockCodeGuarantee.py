@@ -13,7 +13,7 @@ class stockCodeClass:
             int(stockCode) < 9999
         )
 
-    # stock code generation for disclosure search.
+    # stock code generate for disclosure search.
     # require: stockCode: string
     # return: string
     def genarateStockCode (self, stockCode):

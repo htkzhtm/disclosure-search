@@ -16,7 +16,7 @@ class wordClouder:
 
     baseName = "jpcrp"
 
-    # Generation. This Spec will be modified.
+    # Generate. This Spec will be modified.
     def generateWordCloud (self, edinetCode, periodEnd, submitDateTime, formCode):
         conf = wcc.configClass()
         fileNamePattern = self.generateXbrlFileNamePattern(edinetCode, periodEnd, submitDateTime, formCode)
